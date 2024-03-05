@@ -13,14 +13,14 @@ routerMovies.route('/movies/:id')
     .put(update);
 
 routerMovies.route('/movies/:id/genres')
-    .get(setMoviesGenres)
+    .post(setMoviesGenres)
 
 
 routerMovies.route('/movies/:id/actors')
-    .get(setMoviesActors) 
+    .post(setMoviesActors) 
     
 routerMovies.route('/movies/:id/directors')
-    .get(setMoviesDirectors)
+    .post(setMoviesDirectors)
 
 
 
