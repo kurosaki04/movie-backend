@@ -34,13 +34,7 @@ const update = catchError(async(req, res) => {
     return res.json(result[1][0]);
 });
 
-const setActorsMovies = catchError (async(req, res) => {
-    const { id } = req.params;
-    const actors = await Actors.findByPk(id);
-    await actors.setMovies(req.body);
-    const movies = await actors.getMovies();
-    return res.json(movies)
-})
+
 
 module.exports = {
     getAll,
@@ -48,5 +42,5 @@ module.exports = {
     getOne,
     remove,
     update,
-    setActorsMovies
+    
 }

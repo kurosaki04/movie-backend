@@ -1,4 +1,4 @@
-const { getAll, create, getOne, remove, update } = require('../controllers/movies.controllers');
+const { getAll, create, getOne, remove, update, setMoviesGenres, setMoviesActors, setMoviesDirectors  } = require('../controllers/movies.controllers');
 const express = require('express');
 
 const routerMovies = express.Router();
@@ -12,6 +12,16 @@ routerMovies.route('/movies/:id')
     .delete(remove)
     .put(update);
 
-routerMovies.route('/movies/:id/')
+routerMovies.route('/movies/:id/genres')
+    .get(setMoviesGenres)
+
+
+routerMovies.route('/movies/:id/actors')
+    .get(setMoviesActors) 
+    
+routerMovies.route('/movies/:id/directors')
+    .get(setMoviesDirectors)
+
+
 
 module.exports = routerMovies;
